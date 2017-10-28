@@ -20,7 +20,8 @@
         <service
             android:name=".BoundService"
             android:enabled="true"
-            android:exported="true">
+            android:exported="true"
+            android:process=":service">
         </service>
     </application>
 
