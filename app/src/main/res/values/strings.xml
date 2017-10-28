@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AudioSelectionDemo</string>
+    <string name="label_from_main_process">From main process:</string>
+    <string name="label_from_remote_process">From remote process:</string>
+    <string name="type_format">Type: %1$d, Id: %2$d</string>
+</resources>

@@ -1,0 +1,32 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.keyboardr.audioselectiondemo"
+        minSdkVersion 24
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildToolsVersion '27.0.0'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'android.arch.lifecycle:common-java8:1.0.0-rc1'
+    implementation 'android.arch.lifecycle:extensions:1.0.0-rc1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta3'
+}
