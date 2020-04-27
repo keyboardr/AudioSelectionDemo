@@ -1,15 +1,18 @@
 package com.keyboardr.audioselectiondemo;
 
-import android.arch.lifecycle.LiveData;
 import android.content.Context;
 import android.media.AudioDeviceCallback;
 import android.media.AudioDeviceInfo;
 import android.media.AudioManager;
-import android.support.annotation.NonNull;
 import android.util.ArraySet;
 
 import java.util.Arrays;
 import java.util.Set;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.LiveData;
+
+import static java.util.Objects.requireNonNull;
 
 public class AudioDeviceLiveData extends LiveData<Set<AudioDeviceInfo>> {
 
@@ -40,7 +43,7 @@ public class AudioDeviceLiveData extends LiveData<Set<AudioDeviceInfo>> {
   }
 
   public AudioDeviceLiveData(Context context) {
-    audioManager = context.getSystemService(AudioManager.class);
+    audioManager = requireNonNull(context.getSystemService(AudioManager.class));
   }
 
   @Override

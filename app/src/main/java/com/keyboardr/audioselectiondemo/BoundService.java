@@ -1,8 +1,6 @@
 package com.keyboardr.audioselectiondemo;
 
 import android.annotation.SuppressLint;
-import android.arch.lifecycle.LifecycleService;
-import android.arch.lifecycle.Transformations;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +11,9 @@ import android.os.RemoteException;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.lifecycle.LifecycleService;
+import androidx.lifecycle.Transformations;
 
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.toList;

@@ -1,6 +1,5 @@
 package com.keyboardr.audioselectiondemo;
 
-import android.arch.lifecycle.Transformations;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
@@ -11,12 +10,15 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import java.util.List;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
+import androidx.lifecycle.Transformations;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import static java.util.Comparator.comparingInt;
 import static java.util.stream.Collectors.toList;
@@ -26,7 +28,7 @@ public class MainActivity extends FragmentActivity {
   Messenger toService;
   Messenger fromService = new Messenger(new Handler(Looper.getMainLooper()) {
     @Override
-    public void handleMessage(Message msg) {
+    public void handleMessage(@NonNull Message msg) {
       super.handleMessage(msg);
       if (msg.getData() != null) {
         msg.getData().setClassLoader(getClassLoader());

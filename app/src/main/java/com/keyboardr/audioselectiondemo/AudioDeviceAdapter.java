@@ -1,8 +1,5 @@
 package com.keyboardr.audioselectiondemo;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +7,15 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.Adapter;
+
 class AudioDeviceAdapter extends Adapter<AudioDeviceAdapter.DeviceHolder> {
   private List<ParcelableAudioDeviceInfo> devices;
 
+  @NonNull
   @Override
   public DeviceHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     return new DeviceHolder(LayoutInflater.from(parent.getContext())
